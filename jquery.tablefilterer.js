@@ -1,3 +1,24 @@
+/*
+
+Description:
+==========================================================================================
+
+jQuery table filterer
+
+Inserts dropdowns into your table's header contianing distinct values from that column. Changing the dropdown's value filters the table to show only matching rows.
+
+This plugin is designed to work on <table/>s. It must have a <thead> with a single <tr> with <th>'s in it.
+All body rows should be in a <tbody>.
+
+Usage:
+==========================================================================================
+
+$('selector here').tablefilterer({
+	cols: [0,1,2,3] // list the indexes (zero based) of the columns you want to make filterable. This is optional, ommit for all columns
+});
+
+*/
+
 (function($) {
 	$.fn.tablefilterer = function(options) {
 		var cfg = $.extend({
