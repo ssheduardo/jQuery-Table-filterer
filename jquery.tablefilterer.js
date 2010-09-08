@@ -5,8 +5,6 @@ Description:
 
 jQuery table filterer
 
-Inserts dropdowns into your table's header contianing distinct values from that column. Changing the dropdown's value filters the table to show only matching rows.
-
 This plugin is designed to work on <table/>s. It must have a <thead> with a single <tr> with <th>'s in it.
 All body rows should be in a <tbody>.
 
@@ -100,7 +98,7 @@ $('selector here').tablefilterer({
 			}
 
 			tbody.children('tr').css('display', 'none');
-			rows.css('display', 'table-row');
+			rows.css('display', '');
 		}
 	};
 })(jQuery);
