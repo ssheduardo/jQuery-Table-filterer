@@ -20,7 +20,8 @@ $('selector here').tablefilterer({
 (function($) {
 	$.fn.tablefilterer = function(options) {
 		var cfg = $.extend({
-			cols: []
+			cols: [],
+            showth:false
 		}, options);
 
 		var tables = this.filter('table:has(thead):has(tbody)');
@@ -47,12 +48,17 @@ $('selector here').tablefilterer({
 
 				var th = $(this);
 				var index = th.index();
+                if(cfg.showth){
+                    var textocabecera = th.text();
+                    th.html('');
+                }
 				var select = $('<select/>').change(function() {
 					changeHandler(tbody, selects);
 				});
+                
 				selects[selects.length] = { Select: select, Col: col };
 
-				select.append($('<option/>').text("-- All --").val(""));
+				select.append($('<option/>').text((cfg.showth)?textocabecera:'-- All --').val(""));
 
 				var pastValues = [];
 				var values = tbody.find('td:nth-child(' + (index + 1) + ')');
